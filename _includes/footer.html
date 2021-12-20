@@ -1,0 +1,51 @@
+<!-- footer -->
+<footer class="footer-wraper">
+
+<div class="footer-header">
+  <a href="{{ site.baseurl }}/">
+  <h2>{% include site-logo.svg %} in {{ site.postal_add.city }}</h2></a>
+</div>
+
+<ul class="footer-nav-links sitemap">
+  <h3>Sitemap</h3>
+  {% for item in site.data.menu %}
+  {% if item.sitemap == 1 %}
+  <li><a href="{{ site.baseurl }}{{ item.link }}">
+  {{ item.name }}
+  </a></li>
+  {% endif %}
+  {% endfor %}
+</ul>
+
+<ul class="footer-nav-links category-links">
+  <h3>Categories</h3>
+  {% for category in site.categories %}
+  <li><a href="{{ site.baseurl }}/slow-blog/categories/#{{ category[0] | slugify }}">
+  {{ category[0] | upcase }}
+  </a></li>
+  {% endfor %}
+</ul>
+
+<ul class="footer-nav-links footer-services">
+  <h3>Services</h3>
+  {% for item in site.data.services %}
+  <li>
+  {{ item.name }}
+  </li>
+  {% endfor %}
+</ul>
+
+<!-- quick contact form -->
+
+<div class="footer-contact">
+{% include quick-contact.html %}
+</div>
+
+<!-- footer base and copyright -->
+
+<div class="footer-base">
+  <p class="slogan">made slowly ⚡served fast</p>
+  <p class="copyright">&copy; <script>document.write(new Date().getFullYear())</script> {{ site.title }}</p>
+</div>
+
+</footer>

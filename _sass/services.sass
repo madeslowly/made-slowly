@@ -1,0 +1,130 @@
+.service-wraper
+  background-image: url($baseurl + 'assets/img/content/services/services-bg.svg')
+  background-position: bottom
+  background-size: cover
+
+.services-blurb
+  text-align: left
+
+.service-blurb-wrapper
+  background-color: $pure-white
+  border-radius: 10px
+  box-shadow: 5px 10px 10px $box-shadow-shade
+  margin: 0 auto
+  padding: 5vh 5vw
+  width: 80%
+
+.service-panel
+  display: flex
+  flex-direction: column
+  flex-wrap: wrap
+  justify-content: space-around
+  overflow-x: hidden
+  padding: 10vh 0 20px
+  width: 100%
+
+  .service-buttons
+    justify-content: space-around
+
+.service
+  flex-basis: 100%
+  flex-shrink: 0
+  padding: 20px
+
+.service-icon
+  height: 40px
+  width: 40px
+
+.service-title
+  display: inline
+  padding-left: 10px
+
+.service-cto-img-wrapper
+  flex-basis: 100%
+  margin: 0 auto
+
+.service-cto-img
+  width: 100%
+
+.service-buttons
+  align-self: center
+  flex-basis: 50%
+
+#contact.btn-outline
+  color: $vivid-pink
+  //change to btn-vivd-pink class
+
+.btn-services
+  box-shadow: $box-shadow $vivid-pink
+
+@media screen and ( min-width: 768px )
+
+  .service-blurb-wrapper
+    width: 60%
+
+  .service-panel
+    flex-direction: row
+    justify-content: space-around
+    padding: 10vh 0 5vh
+
+  .service
+    width: 40vw
+
+  .service-icon
+    border-radius: 10px
+    box-shadow: 6px 6px 16px $box-shadow-shade
+    height: 65px
+    padding: 15px
+    width: 65px
+
+  .service-title
+    display: block
+    padding-left: 0
+
+  .service-cto-img-wrapper
+    flex-basis: 50%
+    margin: 0
+    max-height: 50%
+    max-width: 50%
+
+@media screen and ( min-width: 1024px )
+
+  .services-blurb
+    text-align: center
+
+  .service-icon
+    transition: box-shadow .3s ease-in
+
+  .service
+    border-radius: 10px
+    padding: 50px
+    transition-duration: .2s
+    transition-property: background-color, box-shadow, transform
+    transition-timing-function: ease-in
+    width: 35vw
+
+    &:hover
+      background-color: $pure-white
+      box-shadow: 0 5px 20px -10px $box-shadow-shade
+      transform: translateY(-2px)
+
+      .service-icon
+        box-shadow: 0 0 0 $pure-white
+
+  .btn-services
+    box-shadow: $box-shadow $vivid-pink
+
+@media screen and ( min-width: 1280px )
+
+  .service-blurb-wrapper
+    max-width: 600px
+
+  .service-panel
+    margin: 0 auto
+    max-width: 1280px
+    padding: 15vh 0 20px
+
+  .service
+    flex-basis: 25%
+    max-width: 320px
+    width: 20vw

@@ -1,0 +1,29 @@
+<!-- portfolio  -->
+<section class=" portfolio-wraper">
+
+<div class="portfolio-panel">
+  {% for item in site.data.portfolio %}
+  <a href="{{ item.url }}" aria-label="">
+  <div class="portfolio-item" data-aos="fade-in">
+
+  <div class="portfolio-image"
+  style="background-image: url( '{{ site.baseurl }}/assets/img/clients/{{ item.screenshot }}' );"></div>
+
+  <div class="portfolio-card-wrapper">
+    <div class="portfolio-card">
+      <h2 class="portfolio-title">{{ item.category }}</h2>
+      <h4 class="portfolio-strap">{{ item.strap }}</h4>
+      <p class="portfolio-description">{{ item.description }}</p>
+      <ul class="portfolio-technologies">
+      {% for entry in item.technologies %}
+      <li><i class="fab fa-{{ entry.icon }} fa-2x"></i></li>
+      {% endfor %}
+      </ul>
+    </div>
+    </div>
+
+    </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>

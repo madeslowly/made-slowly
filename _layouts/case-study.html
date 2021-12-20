@@ -1,0 +1,51 @@
+---
+layout: single-post
+---
+<!-- Layout for client case studies -->
+
+{{ content }}
+
+{% if page.logos != null %}
+<h4>Branding</h4><hr>
+<section class="flex-display">
+{% for item in page.logos %}
+  <img class="theme-images"
+  src="{{ site.baseurl }}/assets/img/clients/{{ page.directory }}/logos/{{ item }}"
+  alt="{{ page.directory }} {{ item }}">
+{% endfor %}
+</section>
+{% endif %}
+
+{% if page.icons != null %}
+<h4 class="blog-para">Iconography</h4><hr>
+<section class="flex-display">
+{% for item in page.icons %}
+  <img class="theme-images"
+  src="{{ site.baseurl }}/assets/img/clients/{{ page.directory }}/iconography/{{ item }}"
+  alt="{{ page.directory }} {{ item }}">
+{% endfor %}
+</section>
+{% endif %}
+
+{% if page.colors != null %}
+<h4 class="blog-para">Colour Scheme</h4><hr>
+<section class="flex-display">
+{% for item in page.colors %}
+  <svg class="theme-colors"
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0, 0, 50, 50" preserveAspectRatio="none" ><defs/>
+  <circle cx="25" cy="25" r="20"
+  fill="#{{ item }}"
+  alt="{{ page.directory }} color #{{ item }}" />
+  </svg>
+{% endfor %}
+</section>
+{% endif %}
+
+<h4 class="blog-para">Typography</h4><hr>
+<section class="flex-display">
+  <img class="theme-images"
+  src="{{ site.baseurl }}/assets/img/clients/{{ page.directory }}/font/font.png"
+  width="100%"
+  alt="{{ page.directory }} font {{ page.font }}">
+</section>

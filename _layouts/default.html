@@ -1,0 +1,26 @@
+---
+layout: compress
+---
+
+{% include header.html %}
+
+{% if page.url == "/" %}
+<a name"#"></a>
+{% endif %}
+
+{% include nav.html %}
+
+{% if page.url == "/styleguide/" %}
+<section class="global-wrapper" style="margin:100px 2rem">
+{{ content }}
+</section>
+{% else %}
+{{ content }}
+{% endif %}
+
+{% include footer.html %}
+
+{% include scripts.html %}
+
+</body>
+</html>

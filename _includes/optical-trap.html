@@ -1,0 +1,93 @@
+<div class="optical-trap-wrapper">
+
+  <div class="optical-trap" id="optical-trap"></div>
+  <p>Temperature</p>
+  <div class="slide-wrapper">
+    <input type="range" min="1" max="10" step=".1" value="9" class="slider" id="zigma" name="zigma">
+  </div>
+  <p>Trap Strength</p>
+  <div class="slide-wrapper">
+    <input type="range" min="0.01" max="1" step=".01" value="0.1" class="slider" id="kappa" name="kappa">
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script src="https://www.chartjs.org/samples/latest/utils.js"></script>
+
+<div class="chart-wrapper">
+  <canvas id="canvas"></canvas>
+</div>
+
+<script>
+var h = 0.3 * window.innerHeight;
+var xAxis = new Array(100);
+for ( var i = 0 ; i < 100 ; i++ ) {
+  xAxis[i]=i;
+}
+
+var config = {
+  type: 'line',
+  data: {
+    labels: xAxis,
+    datasets: [{
+      label: 'My First dataset',
+      backgroundColor: window.chartColors.red,
+      borderColor: window.chartColors.red,
+      data: ax,
+      fill: false,
+    }]
+  },
+  options: {
+    legend: {
+      display: false
+    },
+    responsive: true,
+    title: {
+      display: false,
+      text: 'Colloid Position in the horizontal direction'
+    },
+    events: ['click'],
+    tooltips: {
+      mode: 'index',
+      intersect: false,
+    },
+    hover: {
+      mode: 'none',
+      intersect: false
+    },
+    scales: {
+      xAxes: [{
+        ticks: {
+          display: false,
+          stepSize: 10,
+        },
+        display: true,
+        scaleLabel: {
+          display: true,
+          labelString: 'Time'
+        }
+      }],
+      yAxes: [{
+        ticks: {
+          min: 0,
+          max: h,
+          maxTicksLimit: 5,
+          display: false,
+        },
+        display: true,
+        scaleLabel: {
+          display: true,
+          labelString: 'Colloid Position'
+        }
+      }]
+    }
+  }
+};
+
+function drawOpticalTrapData() {
+  var ctx = document.getElementById('canvas').getContext('2d');
+  window.myLine = new Chart(ctx, config);
+};
+
+</script>

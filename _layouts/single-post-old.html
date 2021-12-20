@@ -1,0 +1,46 @@
+---
+layout: default
+---
+<!-- single post layout -->
+
+<section class="blog-masthead global-masthead"  style="background-image: url('{{ site.baseurl }}/{{ page.background }}');"></section>
+
+<div class="post-preview-text">
+
+<h2 class="post-preview-title">{{ page.title }}</h2>
+
+<h3 class="post-preview-subtitle">{{ page.subtitle }}</h3>
+
+<p class="post-meta">
+{{ page.date | date: '%B %d, %Y' }}
+</p>
+
+<ul class="post-meta">
+  {% assign n = page.categories | size | minus:1 %}
+  {% assign p = page.categories | sort %}
+
+  {% for categories in p %}
+
+  <li>
+    {% assign i = forloop.index | minus:1 %}
+    <a href="{{ site.baseurl }}/slow-blog/categories/{{ page.categories[ i ] | replace: ' ', '-' }}">
+    {{ page.categories[ i ] }}
+    {% if n != i %} | {% endif %}
+    </a>
+  </li>
+
+  {% endfor %}
+
+</ul>
+
+</div>
+
+<section class="blog-content">
+
+{{ content }}
+
+{% include share-buttons.html %}
+
+</section>
+
+{% include blog-footer.html %}

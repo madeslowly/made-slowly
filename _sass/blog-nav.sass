@@ -1,0 +1,61 @@
+.blog-nav-container
+  margin: 5vh auto
+  width: 100vw
+
+.blog-nav
+  display: flex
+  flex-direction: column
+
+.blog-nav-link
+  display: inline
+  float: none
+  color: black
+  padding-top: 2rem
+  margin: 0 10vw
+  text-decoration: none
+
+.blog-nav-link-active
+  border-bottom: solid 1px $black
+
+.dropbtn
+  border: solid 2px $light-grey
+  background-color: inherit
+  width: 80vw
+  margin: 0 auto
+  //padding: 4vh 0
+
+.dropdown-content
+  position: absolute
+  background-color: $white
+  width: 80%
+  left: 10vw
+  border-radius: 4px
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2)
+  z-index: 1
+
+@media screen and ( min-width: 768px )
+  .blog-nav
+    flex-direction: row
+    max-width: 600px
+    justify-content: space-between
+    margin: 0 auto 100px auto
+    border-bottom: solid 1px $light-grey
+
+  .dropbtn
+    display: none
+
+  .dropdown-content
+    display: block
+    margin: 0
+    padding: 0
+    width: 100%
+    position: inherit
+    background-color: inherit
+    box-shadow: none
+
+  .blog-nav-link
+    padding: 0
+    margin: 0
+    text-decoration: none
+    display: block
+    text-align: left

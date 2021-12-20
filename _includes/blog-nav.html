@@ -1,0 +1,21 @@
+<!-- navigation unique to blog pages with url /slow-blog/* -->
+
+<div class="blog-nav-container">
+  <button class="dropbtn" onclick="displayItem('dropdown{{ category_name | upcase | remove: ' ' }}')">Categories
+    <i class="fa fa-caret-down"></i>
+  </button>
+
+  <div class="dropdown-content display-none" id="dropdown{{ category_name | upcase | remove: ' ' }}">
+    <ul class="blog-nav center-text">
+    <li class="blog-nav-link {% if page.url == '/slow-blog/' %} blog-nav-link-active {% endif %}"><a href="{{ site.baseurl }}/slow-blog/" onclick="displayItem('dropdown{{ category_name | upcase | remove: ' ' }}')">
+    SLOW BLOG
+    </a></li>
+    {% assign p = site.categories | sort  %}
+    {% for category in p %}
+    <li class="blog-nav-link {% if category[0] == category_name or category[0] == page.categories[0] %} blog-nav-link-active {% endif %}"><a href="{{ site.baseurl }}/slow-blog/categories/#{{ category[0] | slugify }}" onclick="displayItem('dropdown{{ category_name | upcase | remove: ' ' }}')">
+    {{ category[0] | upcase }}
+    </a></li>
+    {% endfor %}
+    </ul>
+  </div>
+</div>

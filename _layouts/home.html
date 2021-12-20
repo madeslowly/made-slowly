@@ -1,0 +1,45 @@
+---
+layout: default
+---
+<section class="landing-wraper">
+  <div class="landing-content">
+    <h1 class="h-light">
+    {{ page.title }}</h1>
+    <div class="mouse">
+        <div class="scroll"></div>
+    </div>
+    {% assign n = page.subtitle | size %}
+    {% for items in page.subtitle %}
+    <h3 class="h-light landing-page-sub-title"> {{ items }} </h3>
+    {% if n != forloop.index %}
+    <!-- keeping these outside <h incase it affects seo -->
+    <span class="h-light landing-page-sub-title">|</span>
+    {% endif %}
+    {% endfor %}
+
+    <div class="btn-landing">
+      <div
+      data-aos="fade-in"
+      data-aos-delay="1000"
+      data-aos-easing="ease">
+        <!-- wrapping in div to use AOS -->
+        <!-- really need to write our own AOS -->
+        <a href="/#services" class="btn btn-pop btn-solid btn-pink" role="button">{{ page.cta }}</a>
+      </div>
+      <!--
+      <div data-aos="fade-up">
+        <a href="" class="btn btn-outline btn-color-swoosh" role="button">INSTANT QUOTE</a>
+      </div>
+      -->
+    </div>
+  </div>
+</section>
+
+
+{{ content }}
+
+<a name="services"></a>
+
+{% include services.html %}
+
+<section class="spacer portfolio-wraper"></section>

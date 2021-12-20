@@ -1,0 +1,43 @@
+<nav class="
+  <!-- if the page has a light bg declare nav: 'dark' in its front matter -->
+  {% if page.nav == 'dark' %}
+    nav-noscroll-dark
+  {% else %}
+    nav-noscroll
+  {% endif %}
+  ">
+  <div class="nav-brand">
+    <a href="{{ site.baseurl }}/">
+    {% include site-logo.svg %}
+    </a>
+    {% for social in site.data.socials %}
+    <a class="nav-socials nav-{{ social[1].icon }}" href="{{ social[1].url }}{{ social[1].username }}/">
+    <i class="fab fa-{{ social[1].icon }}" title="Made Slowly {{ social[1].icon | capitalize }} account"></i>
+    </a>
+    {% endfor %}
+  </div>
+
+  <ul class="nav-menu">
+    <hr class="nav-menu-topbar">
+    {% for item in site.data.menu %} {% if item.navbar == 1 %}
+    <a href="{{ baseurl }}{{ item.link }}">
+    <li class="nav-link">
+    {{ item.name }}
+    </li>
+    </a>
+    {% endif %} {% endfor %}
+    <li>
+      {% for social in site.data.socials %}
+      <a class="mob-socials nav-link" href="{{ social[1].url }}{{ social[1].username }}/">
+      <i class="fab fa-{{ social[1].icon }}" title="Made Slowly {{ social[1].icon | capitalize }} account"></i>
+      </a>
+      {% endfor %}
+    </li>
+  </ul>
+
+  <div class="burger">
+    <div class="burger-line-1"></div>
+    <div class="burger-line-2"></div>
+    <div class="burger-line-3"></div>
+  </div>
+</nav>

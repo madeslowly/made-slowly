@@ -1,0 +1,52 @@
+.footer-wraper
+  background-color: $footer-bg
+  background-image: url('/assets/img/content/footer-bg.svg')
+  background-position: center
+  background-size: cover
+  color: $white
+  display: grid
+  grid-column-gap: 5vw
+  grid-row-gap: 30px
+  grid-template-areas: 'footer-header footer-header' 'sitemap category-links' 'footer-contact footer-contact' 'footer-base footer-base'
+  grid-template-columns: auto auto
+  padding: 5vh 5vw
+
+  h3
+    color: $vivid-blue
+    padding: 12px 0
+
+.footer-header
+  grid-area: footer-header
+
+.footer-nav-links > li
+  font-size: .8rem
+  list-style: none
+  padding: 3px 0
+  transition: opacity .2s ease-in-out
+
+.sitemap
+  grid-area: sitemap
+
+.category-links
+  grid-area: category-links
+
+.footer-services
+  display: none
+
+.footer-contact
+  grid-area: footer-contact
+  padding-bottom: 40px
+
+.btn-footer
+  color: $pure-white
+  width: 100%
+
+.footer-base
+  border-top: 1px solid $grey
+  display: flex
+  flex-direction: column
+  grid-area: footer-base
+  text-align: center
+
+  p
+    font-size: $small-font

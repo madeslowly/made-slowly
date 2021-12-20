@@ -1,0 +1,29 @@
+<!--
+This is where we put scripts for managing cookie consent
+This is placed before /body along with _include/scripts.html
+-->
+
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+
+<script>
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "rgba(40, 40, 40, .8)",
+      "text": "#ffffff"
+    },
+    "button": {
+      "background": "rgba(144, 0, 0, .9)"
+    }
+  },
+  "theme": "edgeless",
+  "position": "bottom-left",
+  "content": {
+    "message": "This website is cooking up cookies. Whoa there",
+    "dismiss": "I eat cookies for breakfast!",
+    "link": "tell me more!",
+    "href": "/privacy-policy/##cookies",
+    "target": "_self"
+  }
+});
+</script>

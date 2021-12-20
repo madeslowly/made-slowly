@@ -1,0 +1,86 @@
+html
+  font-size: $global-font-size
+  scroll-behavior: smooth
+
+body
+  box-sizing: border-box
+  overflow-x: hidden
+
+a
+  color: inherit
+  text-decoration: none
+
+  &:hover
+    text-decoration: none
+
+// defining z here just makes sure no funny bussiness happens with other layers showing up on top
+nav,
+footer
+  z-index: 1
+
+// Reset some basic elements
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+hr,
+dl,
+dd,
+ol,
+ul,
+figure
+  margin: 0
+  padding: 0
+
+::placeholder
+  color: $black
+  font-family: $primary-font-family
+
+// BUTTONS
+
+button,
+.btn
+  // some 'buttons' are actually hyperlinks styled to look like buttons, for the purpose of readers. So we always class as .btn btn-*
+  border-radius: 5px
+  display: block
+  font-size: 1rem
+  font-weight: $heavy-font
+  letter-spacing: 1px
+  margin: 20px auto
+  padding: 1rem 1.6rem
+  text-align: center
+  text-decoration: none
+  transition: .3s ease-in-out
+  white-space: nowrap
+  width: min-content
+
+button
+  cursor: pointer
+
+.btn-solid
+  border: 0
+
+.btn-outline
+  background-color: transparent
+  border: solid 1px
+
+.btn-yellow
+  background-color: $yellow
+  color: $blue
+
+.btn-pink
+  background-color: $vivid-pink
+  color: $white
+
+.btn-white
+  background-color: $pure-white
+  color: $soft-black
+
+.display-none
+  display: none

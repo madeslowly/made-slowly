@@ -1,0 +1,24 @@
+<!-- display card for each post -->
+
+<div class="post-preview-wrapper">
+
+<div
+class="post-preview-img"
+style="background-image: url('{{ site.baseurl }}/{{ post.background }}');"></div>
+
+<div class="post-preview-text">
+
+<a href="{{ site.baseurl }}{{ post.url }}" class="post-preview-title">
+
+  <h2>{{ post.title }}</h2>
+
+  <h3>{{ post.subtitle }}</h3>
+
+</a>
+
+<ul class="center-text">
+  {% for categories in post.categories | sort %}
+  <li class="post-tag"><a href="{{ site.baseurl }}/slow-blog/categories/#{{ categories | slugify }}">
+    {{ categories | upcase }}</a></li>{% endfor %}</ul>
+</div>
+</div>

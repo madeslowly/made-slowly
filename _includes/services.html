@@ -1,0 +1,63 @@
+<!-- services offered -->
+<section class="service-wraper">
+
+<div class="service-blurb-wrapper" data-aos="from-origin-fade-up">
+<h1 class="center-text service-header-title">Custom Websites</h1>
+<h3 class="center-text">Fast, responsive and engaging websites developed in Oxford.</h3>
+
+<p class="services-blurb">Whether you are looking to develop a new website or re-design an existing one, a full-stack developer (that's me 👋) can deliver an all-in-one solution, so your new website will be smarter, faster and above all, look awesome. Don't know what you need? Get in touch for free advice.</p>
+
+</div>
+
+<div class="service-panel">
+{% for item in site.data.services %}
+{% assign n = forloop.index | minus: 1 | times: 100 %}
+<div
+  data-aos="fade-in"
+  data-aos-delay="{{ n }}">
+
+  <div class="service {% if item.name == 'Domain Setup' %} display-desktop-only {% endif %}">
+
+    <img class="service-icon" src="{{ site.baseurl }}/assets/img/content/services/icons/{{ item.icon }}" alt="{{ item.name }} icon">
+
+    <h3 class="service-title">{{ item.name }}</h3>
+
+    <p class="service-description">{{ item.description }}</p>
+
+  </div>
+</div>
+{% endfor %}
+</div>
+
+<div class="service-panel">
+  <div class="service-cto-img-wrapper">
+    <picture>
+      {% for item in site.data.img-breakpoints %}
+      <source
+      media="
+      (min-width: {{ item }}px)"
+      srcset="
+      {{ site.baseurl }}/assets/img/content/services/services-panel-bg-{{ item }}.png">
+      {% endfor %}
+
+      <img
+      class="service-cto-img"
+      src="
+      {{ site.baseurl }}/assets/img/content/services/services-panel-bg-320.png"
+      alt="
+      little workers building a website on a laptop">
+    </picture>
+  </div>
+  <div class="service-buttons">
+    <div
+    data-aos="fade-left"
+    data-aos-easing="ease-out-back">
+
+    <a href="/projects/" id="contact" class="btn btn-pop btn-outline btn-services">
+    Check out my work
+    </a>
+    </div>
+
+  </div>
+</div>
+</section>

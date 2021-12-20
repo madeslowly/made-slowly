@@ -1,0 +1,33 @@
+---
+---
+     __  __   __    __       __
+|\/||__||  \ |__   [__  |   |  | | | | |  \___/
+|  ||  ||__/ |__   ___] |__ |__| |_|_| |__  |
+
+Hello human
+
+/* TEAM */
+
+ Developed by Made Slowly in Oxford.
+
+ Author: {{ site.author.name }}
+ Contact: {{ site.author.email }}
+ Twitter: @{{ site.author.twitter }}
+
+ Site: {{ site.url }}
+ Twitter: @{{ site.data.socials.twitter.username }}
+ Location: {{ site.postal_add.city }}, {{ site.postal_add.country }}
+
+ Looking to collaborate? Get in touch.
+
+
+/* SITE */
+
+ Last update: {{ 'now' | date: "%Y/%m/%d" }}
+
+ Standards: HTML5, CSS3
+
+ Software: Jekyll, Atom, Graphic, Affinity Photo
+
+ Jekyll Plugins: {% for items in site.plugins %}
+  - {{ items }}{% endfor %}

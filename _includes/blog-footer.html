@@ -1,0 +1,37 @@
+<div class="blog-wrapper">
+
+  <h2 style="width:100%;text-align:center">
+    You may also like</h2>
+
+  {% if page.next.url %}
+
+  <div class="post-preview-wrapper" >
+    <div class="post-preview-img" style="background-image: url('{{ site.baseurl }}/{{ page.next.background }}');"></div>
+    <div class="post-preview-text">
+    <a href="{{ site.baseurl }}{{ page.next.url }}" class="post-preview-title">
+      <h2>{{ page.next.title }}</h2>
+      <h3>{{ page.next.subtitle }}</h3>
+    </a>
+    <ul class="center-text">
+      {% for categories in page.next.categories | sort %}
+      <li class="post-tag"><a href="{{ site.baseurl }}/slow-blog/categories/#{{ categories | slugify }}">
+        {{ categories | upcase }}</a></li>{% endfor %}</ul>
+    </div>
+  </div>
+  {% endif %}
+  {% if page.previous.url %}
+  <div class="post-preview-wrapper" >
+    <div class="post-preview-img" style="background-image: url('{{ site.baseurl }}/{{ page.previous.background }}');"></div>
+    <div class="post-preview-text">
+    <a href="{{ site.baseurl }}{{ page.previous.url }}" class="post-preview-title">
+      <h2>{{ page.previous.title }}</h2>
+      <h3 >{{ page.previous.subtitle }}</h3>
+    </a>
+    <ul class="center-text">
+      {% for categories in page.previous.categories | sort %}
+      <li class="post-tag"><a href="{{ site.baseurl }}/slow-blog/categories/#{{ categories | slugify }}">
+        {{ categories | upcase }}</a></li>{% endfor %}</ul>
+    </div>
+    </div>
+  {% endif %}
+</div>

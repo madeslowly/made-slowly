@@ -1,0 +1,40 @@
+<script type="text/javascript" src="{{ site.baseurl }}/assets/js/mobile-nav-slider.js" async></script>
+
+<script type="text/javascript" src="{{ site.baseurl }}/assets/js/nav.js" ></script>
+<!-- removed async to ensute nav bg changes when reloading and pageYOffset != 0 -->
+
+{% if page.scripts == "type-effect" %}
+<script type="text/javascript" src="{{ site.baseurl }}/assets/js/typing-effect.js" async>
+</script>
+{% endif %}
+
+{% if page.scripts == "type-delete-effect" %}
+<script type="text/javascript" src="{{ site.baseurl }}/assets/js/typing-deleting-effect.js" async>
+</script>
+{% endif %}
+
+<script type="text/javascript" src="{{ site.baseurl }}/assets/js/displayItem.js" async></script>
+
+<script type="text/javascript" src="{{ site.baseurl }}/assets/aos/aos.js" ></script>
+
+<script>
+  AOS.init({
+    disable: false,
+    duration: {{ site.aos-duration }},
+    easing: '{{ site.aos-easing }}'
+  });
+</script>
+
+{% include cookie-consent.html %}
+
+<!-- we collate and load all our onload func -->
+<script type="text/javascript">
+  function windowOnload(){
+    /* everything loads with this */
+    navBarScroll();
+    {% for func in page.func %}
+    {{ func }}();
+    {% endfor %}
+  }
+  window.onload = windowOnload;
+</script>

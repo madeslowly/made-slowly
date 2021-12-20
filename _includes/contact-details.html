@@ -1,0 +1,30 @@
+<div class="contact-details">
+
+  <h3>Not a form fan? I've got your back, you can contact me directly:</h3>
+
+  <p><i class="fas fa-envelope"></i>
+  <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></p>
+
+  {% if site.phone %}
+  <p><i class="fas fa-phone-square"></i>
+  <a href="tel:{{ site.phone }}‬"‬>{{ site.phone }}‬</a></p>
+  {% endif %}
+
+  <p>Third option? Last one tho'...</p>
+  <h3>Message me via social media.</h3>
+
+  <ul class="social-media">
+
+  {% for social in site.data.socials %}
+  <li class="social-media-item">
+  <a href="{{ social[1].dm_url }}{{ social[1].id }}/">
+  <i class="fab fa-{{ social[1].icon }}-square fa-2x social-media-link"></i></a>
+  </li>
+  {% endfor %}
+
+  <li class="social-media-item">
+  <a href="https://join.slack.com/t/madeslowly/shared_invite/enQtODM5MzUzNDc1NzYxLWM1ZTBkMmMwY2RkYjg2MDkwMmE5YWFkZjQwYjZlODM1YzVmZmE1OTA3MzBmOWVlYjllNzYzNjA2NDgwMDk3ZGI"><i class="fab fa-slack fa-2x social-media-link"></i></a>
+  </li>
+
+  </ul>
+</div>

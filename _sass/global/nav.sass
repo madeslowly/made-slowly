@@ -1,0 +1,136 @@
+nav
+  align-items: center
+  display: flex
+  height: 10vh
+  justify-content: space-between
+  position: fixed
+  top: 0
+  transition: background-color .6s ease-in
+  white-space: nowrap
+  width: 100%
+  z-index: 9999
+
+.nav-noscroll
+  color: $white
+
+  .burger-line-1,
+  .burger-line-2,
+  .burger-line-3
+    background-color: $white
+
+.nav-noscroll-dark
+  color: $soft-black
+
+  .burger-line-1,
+  .burger-line-2,
+  .burger-line-3
+    background-color: $soft-black
+
+.nav-scrolled
+  background-color: $nav-bg
+  color: $white
+
+  .burger-line-1,
+  .burger-line-2,
+  .burger-line-3
+    background-color: $white
+
+.nav-brand
+  align-items: center
+  display: flex
+  font-size: 1.25rem
+  letter-spacing: 4px
+  padding-left: $container-margin-x
+
+.site-logo
+  height: 1.25rem
+  transition: transform .8s ease
+  width: 6px
+
+.nav-brand-text
+  fill: $pure-white
+  padding: 0
+
+.nav-brand-circle
+  fill: $vivid-pink
+
+.nav-menu
+  background-color: $nav-bg
+  border-bottom-left-radius: 80px
+  font-size: 1.3rem
+  height: 90vh
+  list-style: none
+  margin: 0
+  padding: 10vh 0 0 5vw
+  position: absolute
+  right: 0
+  top: 0
+  // transition for the whole slider
+  transform: translateX(100%)
+  transition: transform .4s ease-in
+  width: 95vw
+  z-index: -1
+
+.nav-socials
+  display: none
+
+.nav-active
+  // we toggle this class in mobile-nav-slider.js on burger click
+  // ensure links are always white since our active bg color is dark
+  color: $white
+  transform: translateX(0%)
+
+.nav-link
+  margin: 6vh 15vw
+  opacity: 0
+
+.mob-socials
+  margin-right: 0
+
+.burger
+  cursor: pointer
+  display: block
+  padding-right: $container-margin-x
+
+.burger-line-1,
+.burger-line-2,
+.burger-line-3
+  height: 1px
+  margin: 7px
+  width: 25px
+
+.burger-line-1
+  transition: width .6s ease-in-out
+
+.burger-line-2
+  transition: width .3s ease-in-out
+  // delay on closing
+  transition-delay: .3s
+
+.burger-active
+
+  .burger-line-1,
+  .burger-line-2,
+  .burger-line-3
+    background-color: $white
+
+  .burger-line-1
+    width: 8px
+    // reduce by 17 px
+
+  .burger-line-2
+    // no delay on opening
+    transition-delay: 0s
+    width: 17px
+    // reduce by 8 px
+
+// animation for the links as the slider opens
+@keyframes navLinksFade
+  // the timings for this are set in mobile-nav-slider.js
+  from
+    opacity: 0
+    transform: translateY(20px)
+
+  to
+    opacity: 1
+    transform: translateY(0)

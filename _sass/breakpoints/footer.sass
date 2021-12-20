@@ -1,0 +1,23 @@
+@media screen and ( min-width: 768px )
+
+  .footer-wraper
+    grid-column-gap: 5vw
+    grid-row-gap: 20px
+    grid-template-areas: 'footer-header footer-header footer-header' 'sitemap category-links footer-services' 'footer-contact footer-contact footer-contact' 'footer-base footer-base footer-base'
+    grid-template-columns: auto auto auto
+
+  .footer-base
+    flex-direction: row
+    justify-content: space-between
+
+  .footer-services
+    display: block
+    font-weight: 200
+
+@media screen and ( min-width: 1024px )
+
+  .footer-wraper
+    grid-column-gap: 5vw
+    grid-row-gap: 20px
+    grid-template-areas: 'footer-header footer-header footer-header footer-header' 'sitemap category-links footer-services footer-contact' 'footer-base footer-base footer-base footer-base'
+    grid-template-columns: auto auto auto auto

@@ -1,0 +1,43 @@
+<div class="google-map">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2469.820605643565!2d-1.214444884287573!3d51.75460387967654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876c1aeafa04a05%3A0x760e8ed504dda081!2sMade%20Slowly!5e0!3m2!1sen!2suk!4v1575387470271!5m2!1sen!2suk"
+  width="100%"
+  height="100%"
+  frameborder="0"
+  style="border:0;"
+  allowfullscreen=""></iframe>
+</div>
+<!--
+  <div class="google-map">
+  <div id="map" style="width:300px;height:300px;position:inherit;"></div>
+</div>
+<script>
+  window.mapData = {"latitude":-45.8787605 ,"longitude":170.5027976, "zoom": 5 };
+
+  function initMap() {
+    var myOptions = {
+      scrollwheel: false,
+      draggable: false,
+      panControl: false,
+      disableDefaultUI: true,
+      zoom: window.mapData.zoom,
+      maxZoom: window.mapData.zoom,
+      minZoom: window.mapData.zoom,
+      center: new google.maps.LatLng(window.mapData.latitude, window.mapData.longitude),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    var map = new google.maps.Map(document.getElementById('map'), myOptions);
+
+    var marker = new google.maps.Marker({
+      map: map,
+      position: new google.maps.LatLng(window.mapData.latitude, window.mapData.longitude)
+    });
+
+    google.maps.event.addDomListener(window, 'resize', function() {
+      map.setCenter(myOptions.center);
+    });
+  }
+</script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key={{ site.google.map_api_key }}&callback=initMap"></script>
+-->

@@ -1,0 +1,17 @@
+<!-- display navigation for more posts if they exist -->
+
+{% if paginator.total_pages > 1 %}
+
+<div class="clearfix">
+
+  {% if paginator.previous_page %}
+  <a class="" href="{{ site.baseurl }}{{ paginator.previous_page_path }}">&larr; Newer<span class=""> Posts</span></a>
+  {% endif %}
+
+  {% if paginator.next_page %}
+  <a class="" href="{{ site.baseurl }}{{ paginator.next_page_path }}">Older<span class=""> Posts</span> &rarr;</a>
+  {% endif %}
+
+</div>
+
+{% endif %}

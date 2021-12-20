@@ -1,0 +1,32 @@
+---
+layout: default
+title: Tags
+description: A slow blog, ordered by tags
+thumbnail:
+---
+<!-- this page shows all our posts ordered by catogory -->
+<!-- we link to this from any catogory clicks -->
+
+
+{% for category in site.categories %}
+  {% capture category_name %}{{ category | first }}{% endcapture %}
+
+  <a name="{{ category_name | slugify }}"></a>
+
+  <section class="blog-masthead global-masthead">
+
+  <div id="#{{ category_name | slugify }}"></div>
+
+  <h1 class="">{{ category_name }}</h1>
+
+  </section>
+<!-- list of posts with category_name -->
+  <div class="blog-wrapper">
+
+  {% include blog-nav.html %}
+  {% for post in site.categories[category_name] %}
+    {% include list-post-items.html %}
+  {% endfor %}
+  </div>
+
+{% endfor %}

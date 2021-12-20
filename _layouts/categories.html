@@ -1,0 +1,25 @@
+---
+layout: default
+thumbnail:
+---
+
+<section class="blog-masthead global-masthead">
+
+<h1>
+  {{ page.title }} | {{ page.category }}
+</h1>
+
+</section>
+
+<div class="blog-wrapper">
+<!-- list posts in page.catogory -->
+  {% for category in site.categories %}
+  {% if category[0] == page.category %}
+  {% for post in category[1] %}
+  {% include list-post-items.html %}
+  {% endfor %}
+  {% endif %}
+  {% endfor %}
+
+{% include paginator.html %}
+</div>
