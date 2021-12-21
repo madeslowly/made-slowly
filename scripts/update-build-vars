@@ -1,7 +1,0 @@
-#!/bin/bash
-
-JEKYLL_INFO=$(bundle list | grep jekyll)
-
-#THEME_INFO=$(bundle info slow-steps | grep slow-steps)
-
-echo "jekyll_info: '$JEKYLL_INFO' " > _data/build.yml
