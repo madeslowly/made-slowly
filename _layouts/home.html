@@ -2,6 +2,13 @@
 layout: default
 ---
 <section class="landing-wraper">
+
+  <div class="landing__hero">
+    {%- picture {{ 'content/haglof-hood-smilling.png' }}
+          --img class="landing__hero"
+          --alt {{ page.walk.alt }} -%}
+  </div>
+
   <div class="landing-content">
     <h1 class="h-light">
     {{ page.title }}</h1>

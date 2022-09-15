@@ -51,8 +51,8 @@ autoprefixer:
     - cover 99.5%
 
 picture:
-  source:                  'assets/images'
-  output:                  'assets/images'
+  source:                  'assets/img'
+  output:                  'assets/img'
   strip_metadata:          true
   suppress_warnings:       true
   #disabled: true

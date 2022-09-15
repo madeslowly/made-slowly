@@ -1,12 +1,20 @@
 .landing-wraper
   // fallback
   background-color: $blue
-  background-image: url($baseurl + 'assets/img/content/aboutme_small.png'), linear-gradient(to bottom right, $vivid-blue , $blue)
+  //background-image: url($baseurl + 'assets/img/content/aboutme_small.png'), linear-gradient(to bottom right, $vivid-blue , $blue)
+  background-image: linear-gradient(to bottom right, $vivid-blue , $blue)
   background-position: right
   background-repeat: no-repeat
   background-size: auto 100vh
   height: 100vh
   max-height: 100vh
+
+.landing__hero
+  position: absolute
+  top: 0
+  right: 0
+  width: auto
+  height: 100vh
 
 .landing-content
   padding: 30vh 10vw 0
@@ -26,7 +34,7 @@
 
 @media screen and ( min-width: 376px )
   .landing-wraper
-    background-image: url($baseurl + 'assets/img/content/aboutme_large.png'), linear-gradient(to bottom right, $vivid-blue , $blue)
+    //background-image: url($baseurl + 'assets/img/content/aboutme_large.png'), linear-gradient(to bottom right, $vivid-blue , $blue)
 
 @media screen and ( max-width: 767px )
   // display on ipad but not phone

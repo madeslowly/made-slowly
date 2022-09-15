@@ -1,0 +1,37 @@
+##############################################
+# Jekyll Picture Tag recipes
+##############################################
+
+presets:
+  # Default for when no preset is used
+  default:
+    formats: [webp, jpeg]
+    format_quality:
+      jpg:
+        1200: 80
+        200: 100
+      webp:
+        1200: 80
+        200:  100
+
+    widths: [600, 800, 1000, 1200]
+
+  # All images used in post pages
+  post:
+    formats: [webp, jpeg]
+    format_quality:
+      jpg:
+        1000: 80
+        200: 100
+      webp:
+        1000: 80
+        200:  100
+
+    widths: [600, 1000]
+
+  # Thumbnails used for post feed pages
+  thumb:
+    formats: [webp, jpeg]
+    widths: [200, 400]
+    noscript: true
+    dimension_attributes: true
